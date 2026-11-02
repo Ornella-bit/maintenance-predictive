@@ -1,6 +1,6 @@
 # Maintenance prédictive : estimer la durée de vie restante de moteurs
 
-**Application de démonstration : https://maintenance-predictive.streamlit.app/**
+**Application de démonstration : [maintenance-predictive.streamlit.app](https://maintenance-predictive.streamlit.app/)**
 
 ![Capture de l'application](docs/capture_app.png)
 
@@ -27,14 +27,14 @@ Source : A. Saxena, K. Goebel (2008), *Turbofan Engine Degradation Simulation Da
 Validation croisée par moteur (GroupKFold, 5 groupes), RMSE moyen en cycles :
 
 | Modèle | RMSE |
-|---|---|
+| --- | --- |
 | Random Forest | 18,72 (écart-type 0,49) |
 | Gradient Boosting | 18,49 (écart-type 0,57) |
 
 Test officiel (dernier cycle de chacun des 100 moteurs de test) :
 
 | Modèle | RMSE | MAE |
-|---|---|---|
+| --- | --- | --- |
 | Régression linéaire | 20,99 | 16,64 |
 | Random Forest | 18,22 | 12,90 |
 | **Gradient Boosting** | **17,79** | **12,69** |
@@ -49,7 +49,7 @@ L'application Streamlit permet de choisir un moteur et un cycle, puis affiche la
 
 ## Lancer le projet en local (Windows, PowerShell)
 
-```
+```powershell
 git clone https://github.com/Ornella-bit/maintenance-predictive.git
 cd maintenance-predictive
 python -m venv .venv
@@ -62,7 +62,7 @@ Pour exécuter le notebook, installez aussi `jupyter` et `ipykernel`, puis place
 
 ## Structure
 
-```
+```text
 maintenance-predictive/
 ├── notebooks/01_analyse_modele.ipynb   analyse, modèles, évaluation
 ├── app/streamlit_app.py                application de démonstration
@@ -78,4 +78,4 @@ maintenance-predictive/
 - Les premiers cycles d'un moteur donnent des prédictions instables, car la fenêtre glissante manque d'historique.
 - Pistes : réseaux de neurones (LSTM, CNN 1D), réglage des hyperparamètres, sous-ensembles FD002 à FD004.
 
-Projet pédagogique : ne pas utiliser pour des décisions de maintenance réelles.
+**Projet pédagogique : ne pas utiliser pour des décisions de maintenance réelles.**
